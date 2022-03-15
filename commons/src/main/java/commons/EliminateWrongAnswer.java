@@ -8,4 +8,8 @@ public class EliminateWrongAnswer extends PowerUp{
     public EliminateWrongAnswer(String username, String time){
             super(username,time);
     }
+    @Override
+    public String getStatus() {
+        return "ELIMINATE WRONG ANSWER WAS USED";
+    }
 }

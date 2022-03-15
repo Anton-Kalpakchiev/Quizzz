@@ -21,4 +21,5 @@ public class PowerUpController {
     PowerUp newPowerUp(@RequestBody PowerUp newpowerup) {
         return service.addNewPowerUp(newpowerup);
     }
+
 }

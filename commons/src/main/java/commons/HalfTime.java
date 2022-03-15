@@ -9,4 +9,9 @@ public class HalfTime extends PowerUp {
         super(username, time);
 
     }
+    @Override
+    public String getStatus() {
+        return "HALF TIME WAS USED";
+    }
+
 }

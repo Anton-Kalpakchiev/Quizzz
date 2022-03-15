@@ -8,4 +8,9 @@ public class DoublePoints extends PowerUp{
     public DoublePoints(String username, String time){
         super(username,time);
     }
+
+    @Override
+    public String getStatus() {
+        return "DOUBLE POINTS WAS USED";
+    }
 }

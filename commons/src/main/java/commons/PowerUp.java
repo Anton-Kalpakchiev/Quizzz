@@ -34,6 +34,7 @@ public abstract class PowerUp {
         this.username = username;
         this.time = time;
     }
+    public abstract String getStatus();
 
     @Override
     public boolean equals(Object obj) {
