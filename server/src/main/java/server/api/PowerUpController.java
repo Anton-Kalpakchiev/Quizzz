@@ -1,7 +1,6 @@
 package server.api;
 
 import commons.PowerUp;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import server.service.PowerUpService;
 
