@@ -1,20 +1,12 @@
 package client.Communication;
 
 
-
-import commons.PowerUp;
-import commons.Quote;
-import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.Entity;
-import org.glassfish.jersey.client.ClientConfig;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 
 
 public class PowerUpsCommunication {
