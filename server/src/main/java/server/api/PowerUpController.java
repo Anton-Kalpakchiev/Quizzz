@@ -1,9 +1,8 @@
 package server.api;
 
 import commons.PowerUp;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import server.service.PowerUpService;
 
 import java.util.List;
@@ -15,8 +14,12 @@ public class PowerUpController {
     public PowerUpController(PowerUpService service){
             this.service = service;
     }
-    @PostMapping("")
+    @GetMapping("")
     public List<PowerUp> getPowerUp() {
         return service.getPowerUpList();
+    }
+    @PostMapping("")
+    PowerUp newPowerUp(@RequestBody PowerUp newpowerup) {
+        return service.addNewPowerUp(newpowerup);
     }
 }

@@ -15,7 +15,8 @@ public class PowerUpService {
     public List<PowerUp> getPowerUpList() {
             return repo.getPowerUpList();
     }
-    public void addNewPowerUp(PowerUp p){
+    public PowerUp addNewPowerUp(PowerUp p){
         repo.save(p);
+        return p;
     }
 }
