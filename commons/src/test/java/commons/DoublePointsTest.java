@@ -32,17 +32,25 @@ class DoublePointsTest {
 
     }
     @Test
-    void TestToString(){
-        Timer timer = new Timer(0,20);
+    void TestToString() {
+        Timer timer = new Timer(0, 20);
         String time = timer.toString();
-        DoublePoints a = new DoublePoints("username",time);
+        DoublePoints a = new DoublePoints("username", time);
         assertLinesMatch(List.of(
                 "commons.DoublePoints@[0-9a-f]*\\[",
                 "  id=0",
-                "  time="+time,
+                "  time=" + time,
                 "  username=username",
                 "]"
         ), Arrays.asList(a.toString().split(System.lineSeparator())));
+    }
+    @Test
+    void TestGetStatus(){
+        Timer timer = new Timer(0,20);
+        String time = timer.toString();
+        DoublePoints a = new DoublePoints("username",time);
+       String b = "username USED DOUBLE POINTS at "+time;
+       assertEquals(b,a.getStatus());
 
 
     }

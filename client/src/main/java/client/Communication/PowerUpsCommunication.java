@@ -8,7 +8,6 @@ import java.net.http.HttpResponse;
 
 
 
-
 public class PowerUpsCommunication {
     private static HttpClient client = HttpClient.newBuilder().build();
 

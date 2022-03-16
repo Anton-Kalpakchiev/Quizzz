@@ -10,8 +10,8 @@ public class HalfTime extends PowerUp {
 
     }
     @Override
-    public String getStatus() {
-        return "HALF TIME WAS USED";
+    public String getStatus(){
+        return this.username + " USED HALF TIME" + " at " +time;
     }
 
 }

@@ -45,5 +45,15 @@ class EliminateWrongAnswerTest {
 
 
     }
+    @Test
+    void TestGetStatus(){
+        Timer timer = new Timer(0,20);
+        String time = timer.toString();
+        EliminateWrongAnswer a = new EliminateWrongAnswer("username",time);
+        String b = "username USED ELIMINATE WRONG ANSWER at "+time;
+        assertEquals(b,a.getStatus());
+
+
+    }
 
 }
