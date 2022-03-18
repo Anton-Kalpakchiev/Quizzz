@@ -2,15 +2,14 @@ package client.scenes;
 
 import client.utils.ServerUtils;
 import com.google.inject.Inject;
-import commons.PowerUp;
+import commons.DoublePoints;
+import commons.EliminateWrongAnswer;
+import commons.HalfTime;
 import jakarta.ws.rs.WebApplicationException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import commons.HalfTime;
-import commons.EliminateWrongAnswer;
-import commons.DoublePoints;
 import javafx.stage.Modality;
 
 import java.io.IOException;
@@ -77,15 +76,15 @@ public class ChoosePowerUpsCtrl {
             return;
         }
     }
-    public PowerUp getDoublePoints(){
+    public DoublePoints getDoublePoints(){
         return new DoublePoints("player","0:20");
 
     }
-    public PowerUp getHalftime(){
+    public HalfTime getHalftime(){
         return new HalfTime("player","0:20");
 
     }
-    public PowerUp getEliminateWrongAnswer(){
+    public EliminateWrongAnswer getEliminateWrongAnswer(){
         return new EliminateWrongAnswer("player","0:20");
 
     }

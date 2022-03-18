@@ -71,7 +71,8 @@ public class MainCtrl {
 
         //showOverview();
         //showChooseAnswer();
-        showQuestion();
+//        showQuestion();
+        showPowerUps();
         primaryStage.show();
     }
 
