@@ -9,7 +9,7 @@ public class EliminateWrongAnswer extends PowerUp{
             super(username,time);
     }
     @Override
-    public String getStatus(){
-        return this.username + " USED ELIMINATE WRONG ANSWER" + " at " +time;
+    public String getStatus() {
+        return "ELIMINATE WRONG ANSWER WAS USED";
     }
 }

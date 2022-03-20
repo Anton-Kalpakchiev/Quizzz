@@ -13,7 +13,7 @@ import static org.apache.commons.lang3.builder.ToStringStyle.MULTI_LINE_STYLE;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING,
         name = "POWER_UP_TYPE")
-public class PowerUp {
+public abstract class PowerUp {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
@@ -34,7 +34,7 @@ public class PowerUp {
         this.username = username;
         this.time = time;
     }
-    public String getStatus(){return null;}
+    public abstract String getStatus();
 
     @Override
     public boolean equals(Object obj) {

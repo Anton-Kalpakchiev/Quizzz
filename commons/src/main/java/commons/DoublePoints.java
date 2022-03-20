@@ -10,7 +10,7 @@ public class DoublePoints extends PowerUp{
     }
 
     @Override
-    public String getStatus(){
-        return this.username + " USED DOUBLE POINTS" + " at " +time;
+    public String getStatus() {
+        return "DOUBLE POINTS WAS USED";
     }
 }

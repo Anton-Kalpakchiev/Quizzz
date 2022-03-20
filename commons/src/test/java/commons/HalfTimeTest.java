@@ -43,16 +43,5 @@ class HalfTimeTest {
 
 
     }
-    @Test
-    void TestGetStatus(){
-        Timer timer = new Timer(0,20);
-        String time = timer.toString();
-        HalfTime a = new HalfTime ("username",time);
-        String b = "username USED HALF TIME at "+time;
-        assertEquals(b,a.getStatus());
-
-
-    }
-
   
 }

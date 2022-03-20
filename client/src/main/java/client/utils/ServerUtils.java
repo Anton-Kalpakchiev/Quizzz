@@ -15,7 +15,6 @@
  */
 package client.utils;
 
-import commons.PowerUp;
 import commons.Quote;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.client.Entity;
@@ -58,12 +57,5 @@ public class ServerUtils {
                 .request(APPLICATION_JSON) //
                 .accept(APPLICATION_JSON) //
                 .post(Entity.entity(quote, APPLICATION_JSON), Quote.class);
-    }
-    public PowerUp addPowerUp(PowerUp powerup) {
-        return ClientBuilder.newClient(new ClientConfig()) //
-                .target(SERVER).path("api/powerup") //
-                .request(APPLICATION_JSON) //
-                .accept(APPLICATION_JSON) //
-                .post(Entity.entity(powerup, APPLICATION_JSON), PowerUp.class);
     }
 }
