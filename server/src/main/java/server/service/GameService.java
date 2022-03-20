@@ -200,10 +200,8 @@ public class GameService {
         Question q = g.questions.get(g.currentQuestion);
         for(Player p: g.players){
             if(p.answer!=null && p.answer.equals(q.answer)) {
-                System.out.println("answer recieved");//debug
                 p.score = (long) (p.score + (10.0 - p.timeToAnswer)*10);
             }
-            System.out.println("this is quote after answer recieved");//debug
             p.answer = null;
             System.out.println(p.id + ": " + p.score);
 
