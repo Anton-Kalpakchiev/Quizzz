@@ -16,10 +16,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class QuestionCtrl {
 
@@ -66,8 +63,26 @@ public class QuestionCtrl {
 
     private String selectedAnswer;
 
+    private long timeSinceQuestion;//if we want to reduce time left by half with a joker, timeSinceQuestion-=(timeLeft/2)
+
+    private long currentTime;
+
+    private double timeLeft;
+
+
+
     void updateGameState(GameState gameState) {
         this.gameState = gameState;
+
+        timeSinceQuestion = new Date().getTime();
+        currentTime = timeSinceQuestion;
+//        new Thread(() -> {
+//            while(true) {
+//                currentTime = new Date().getTime();
+//                timeLeft = 10 - (currentTime - timeSinceQuestion);
+//                questionTime.setText(timeLeft + "");
+//            }
+//        }).start();
 
         //TODO: Update question number based on current question
         this.questionTitle.setText("Question 10");
@@ -125,11 +140,19 @@ public class QuestionCtrl {
         assert questionTitle != null : "fx:id=\"questionTitle\" was not injected: check your FXML file 'Question.fxml'.";
 
         timer = new Timer(0,5);
-        Timeline timeline= new Timeline( new KeyFrame(javafx.util.Duration.millis(1), e ->{
-            questionTime.setText(timer.toTimerDisplayString());
+//        Timeline timeline= new Timeline( new KeyFrame(javafx.util.Duration.millis(1), e ->{
+//            questionTime.setText(timer.toTimerDisplayString());
+//        }));
+        Timeline timeline2 = new Timeline( new KeyFrame(javafx.util.Duration.millis(1), e ->{
+
+            currentTime = new Date().getTime();
+            timeLeft = (10000 - (currentTime - timeSinceQuestion))/1000.0;
+            questionTime.setText(timeLeft + "");
+
+//            questionTime.setText(timer.toTimerDisplayString());
         }));
-        timeline.setCycleCount((int)timer.getDurationLong()/1000);
-        timeline.play();
+        timeline2.setCycleCount(20000);//change to 10 000 in the future
+        timeline2.play();
     }
 
     public void syncTimer(long syncLong, long duration) {
