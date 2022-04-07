@@ -78,6 +78,9 @@ public class MainCtrl {
 
     private SinglePlayerUtils singlePlayerUtils;
 
+    private double width;
+    private double height;
+
     public void initialize(Stage primaryStage,
                            Pair<QuestionCtrl, Parent> question,
                            Pair<CountdownTimer, Parent> timer,
@@ -173,14 +176,25 @@ public class MainCtrl {
     }
 
     public void showLobby() throws IOException, InterruptedException {
+        width = primaryStage.getWidth();
+        height = primaryStage.getHeight();
+        primaryStage.setScene(lobby);
         primaryStage.setTitle("Lobby");
         primaryStage.setScene(lobby);
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
         lobbyCtrl.refresh();
     }
 
     public void showSplashScreen() {
+        width = primaryStage.getWidth();
+        height = primaryStage.getHeight();
         primaryStage.setTitle("SplashScreen");
+        primaryStage.hide();
         primaryStage.setScene(splash);
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
+        primaryStage.show();
     }
     public void chooseSingleplayer() {
         setupSingleplayerGame();
@@ -193,8 +207,14 @@ public class MainCtrl {
         showPlayer();
     }
     public void showPlayer() {
+        width = primaryStage.getWidth();
+        height = primaryStage.getHeight();
+        primaryStage.hide();
         primaryStage.setTitle("Adding a player");
         primaryStage.setScene(player);
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
+        primaryStage.show();
         player.setOnKeyPressed(e -> {
             try {
                 playerCtrl.keyPressed(e);
@@ -212,25 +232,49 @@ public class MainCtrl {
     }
 
     public void showQuestion() {
+        width = primaryStage.getWidth();
+        height = primaryStage.getHeight();
+        primaryStage.hide();
         primaryStage.setTitle("Question");
         primaryStage.setScene(question);
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
+        primaryStage.show();
     }
 
     private void showGameEnding() {
+        width = primaryStage.getWidth();
+        height = primaryStage.getHeight();
+        primaryStage.hide();
         primaryStage.setTitle("Game Over");
         primaryStage.setScene(gameEnding);
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
+        primaryStage.show();
     }
 
     public void showQuestionPause() {
+        width = primaryStage.getWidth();
+        height = primaryStage.getHeight();
+        primaryStage.hide();
         primaryStage.setTitle("Pause");
         primaryStage.setScene(questionPause);
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
+        primaryStage.show();
     }
 
     public void showAdminInterface() {
+        width = primaryStage.getWidth();
+        height = primaryStage.getHeight();
+        primaryStage.hide();
         primaryStage.setTitle("Admin Panel");
         primaryStage.setScene(adminInterface);
+        primaryStage.setWidth(width);
+        primaryStage.setHeight(height);
+        primaryStage.show();
     }
-    
+
     public List<String> getPlayers() throws IOException, InterruptedException {
         return gameCommunication.getPlayers(gameId, playerCtrl.serverString);
     }
@@ -251,12 +295,12 @@ public class MainCtrl {
     public List<LeaderboardEntry> getSingleplayerLeaderboards() throws IOException, InterruptedException{
         return singlePlayerUtils.entries;
     }
-    
+
     public List<LeaderboardEntry> getServerLeaderboards() throws IOException, InterruptedException{
         return gameCommunication.getTopLeaderboard(playerCtrl.serverString);
     }
     public void updateServerLeaderboard(LeaderboardEntry e) throws IOException, InterruptedException{
-            gameCommunication.addEntry(playerCtrl.serverString,e);
+        gameCommunication.addEntry(playerCtrl.serverString,e);
     }
     /**
      * Sends a request to the server to initiate the game with ID gameId
@@ -283,7 +327,6 @@ public class MainCtrl {
         gameCommunication.initiateSingleplayerGame(gameId, playerCtrl.serverString);
         currentUsername = newPlayer.username;
     }
-
 
 
     /**
