@@ -190,11 +190,11 @@ public class MainCtrl {
         width = primaryStage.getWidth();
         height = primaryStage.getHeight();
         primaryStage.setTitle("SplashScreen");
-        primaryStage.hide();
+        //primaryStage.hide();
         primaryStage.setScene(splash);
         primaryStage.setWidth(width);
         primaryStage.setHeight(height);
-        primaryStage.show();
+        //primaryStage.show();
     }
     public void chooseSingleplayer() {
         setupSingleplayerGame();
