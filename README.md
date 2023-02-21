@@ -1,27 +1,20 @@
-# Starting template
-
-This README will need to contain a description of your project, how to run it, how to set up the development environment, and who worked on it.
-This information can be added throughout the course, except for the names of the group members.
-Add your own name (do not add the names for others!) to the section below.
-
 ## Description of project
+This is a multiplayer quiz game. One game consists of 20 questions. There are multiple choice and open question. Each question has a 10 second maximum answer time. The faster a player submits their answer, the bigger the amount of points they get. There is a leaderboard that can be accessed by pressing and holding TAB while in game. Multple games can be played at the same time, as there are lobbies. The questions are not hardcoded but imported. Every question consists of a question, an image, one correct answer and if multiple choice, multiple wrong answers. This format can be imported to the activity bank. Questions can be edited, added, and removed in the application itself.
+
+System is implemented using a server-client architecture. One person hosts the game on their machine(the server) and everyone else connects. The communication is implemented with long polling.
+
+
+## Showcase
+Here you can see some images that showcase the general flow of the game
 
 ## Group members
 
-| Profile Picture | Name                | Email                               |
-|---|---------------------|-------------------------------------|
-|![](https://gitlab.ewi.tudelft.nl/uploads/-/system/user/avatar/4765/avatar.png?width=50)| Mert Bora İnevi     | M.B.Inevi@student.tudelft.nl        |
-| ![](https://secure.gravatar.com/avatar/4b5f3392146b1d1d4fd6f72160491492?s=50&d=identicon) | Nguyen Duy Anh Quan | NguyenDuyAnhQuan@student.tudelft.nl |
-| ![](https://secure.gravatar.com/avatar/d7f782ec04f7eeea0f5b3d0fc2344554?s=800&d=identicon)| Stefan Creasta      | Creasta@student.tudelft.nl          |
-| ![](https://secure.gravatar.com/avatar/e7f1f03a262adfea4a79b04419a980cd?s=800&d=identicon)| Alex Pacurar        | A.V.Pacurar-1@student.tudelft.nl    |
-| ![](https://secure.gravatar.com/avatar/d8acca759ee2e58d0defad94780d05ac?s=800&d=identicon)| Anton Kalpakchiev   | A.D.Kalpakchiev@student.tudelft.nl  |
-| ![](https://eu.ui-avatars.com/api/?name=JB&amp;length=4&amp;size=50&amp;color=DDD&amp;background=389fff&amp;font-size=0.325)| Jort Boon           | J.J.Boon@student.tudelft.nl         |
-
-<!-- Instructions (remove once assignment has been completed -->
-<!-- - Add (only!) your own name to the table above (use Markdown formatting) -->
-<!-- - Mention your *student* email address -->
-<!-- - Preferably add a recognizable photo, otherwise add your GitLab photo -->
-<!-- - (please make sure the photos have the same size) --> 
+Anton Kalpakchiev   | A.D.Kalpakchiev@student.tudelft.nl
+Stefan Creasta      | Creasta@student.tudelft.nl
+Mert Bora İnevi     | M.B.Inevi@student.tudelft.nl
+Nguyen Duy Anh Quan | NguyenDuyAnhQuan@student.tudelft.nl
+Alex Pacurar        | A.V.Pacurar-1@student.tudelft.nl
+Jort Boon           | J.J.Boon@student.tudelft.nl  
 
 ## How to run it
 
